@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="MobileOptimized" content="640"/>
+		<meta name="HandheldFriendly" content="true"/>
+		<title>Pixelsuft em-xash</title>
+		<script>
+		document.addEventListener('contextmenu', event => event.preventDefault());
+		</script>
+		<style>
+		  body {
+			font-family: Arial;
+			margin: 10;			padding: none;
+			background-color: #555555;
+			color: #f0b418;
+			margin: 0px;
+		  }
+			hr {
+				border-color: #ffa600;
+			}
+
+
+
+		  #controls {
+			display: inline-block;
+			float: right;
+			vertical-align: top;
+			margin-top: 5px;
+			margin-right: 20px;
+		  }
+
+		  #output {
+			width: 100%;
+			height: 200px;
+			margin: 0 auto;
+			margin-top: 10px;
+			border-left: 0px;
+			border-right: 0px;
+			border-style: solid;
+			padding-left: 0px;
+			padding-right: 0px;
+			display: block;
+			background-color: black;
+			color: white;
+			font-family: 'Lucida Console', Monaco, monospace;
+			outline: none;
+			border-color:#f0B418;
+		  }
+
+
+
+
+		a.glow, a.glow:hover, a.glow:focus
+		{
+			text-decoration: none;
+			color: #F0B418;
+			text-shadow: none;
+			-webkit-transition: 500ms linear 0s;
+			-moz-transition: 500ms linear 0s;
+			-o-transition: 500ms linear 0s;
+			transition: 100ms linear 0s;
+			outline: 0 none;
+		}
+		a.glow:hover, a.glow:focus
+		{
+			color: #ffa600;
+			text-shadow: -1px 1px 8px #ffa600, 1px -1px 8px #ffa600;
+		}
+		input[type="button" i]
+		{
+			color:#f0b418;
+			background-color: #555555;
+			border: 2px solid #f0b418;
+			border-radius: 40px;
+			width: 100%;
+			height: 40px;
+			font-family: Segoe UI;
+			font-size: 20px;
+			transition: 0.5s all;
+		}
+		input[type="button" i]:hover
+		{
+			color:#555555;
+			background-color: #f0b418;
+			font-size: 22px;
+		}
+		input[type="number" i] {
+			color:#f0b418;
+			background-color: #555555;
+			border: 2px solid #f0b418;
+			border-radius: 40px;
+			font-family: Segoe UI;
+			font-size: 15px;
+			transition: 0.5s all;
+		}
+		*{
+			cursor: default;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		if (document.createElement("detect").style.textShadow === "") {
+			document.getElementsByTagName("html")[0].className += " textshadow";
+		}
+		audio{
+			display: none;
+		}
+		</style>
+	</head>
+
+<body bgcolor=#555555 text=#F0B418 link=#ffa600 vlink=#ffa600>
+<p><h1><a onclick=location.href="https://github.com/FWGS/xash3d/" class="glow">Xash3D FWGS</a> Emscripten port</h1></p>
+
+</html>
+
+<hr>
+Settings: <br>
+<form>
+Memory size: <input type=number value=150 id=mem >
+<p><input type=button onclick=location.href="xash.html#"+document.getElementById('mem').value value=Start></p>
+
+</form>
+<script>
+var a = new Audio('music.mp3');
+var pashalka_count = 0;
+
+function play_sound(){
+	if(pashalka_count==10) a.play();
+	pashalka_count+=1;
+}
+window.addEventListener('click', play_sound);
+window.addEventListener('keydown', play_sound);
+</script>
+</body>
+<hr>
